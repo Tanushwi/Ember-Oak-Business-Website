@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ember & Oak — Specialty Coffee Roastery, Bandra Mumbai</title>
+<meta name="description" content="Small-batch coffee roastery in Bandra West, Mumbai. Single-origin beans, roasted every Tuesday, shipped across India in 48 hours." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-brand">Ember &amp; Oak<span>®</span></div>
+    <div class="preloader-bar"><span id="loadBar"></span></div>
+    <div class="preloader-count"><span id="loadCount">0</span>%</div>
+  </div>
+</div>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="progress" id="progress"></div>
+
+<header class="nav" id="nav">
+  <a href="#top" class="brand">
+    <span class="brand-mark"></span>
+    Ember &amp; Oak<sup>®</sup>
+  </a>
+
+  <nav class="nav-links">
+    <a href="#live">Live</a>
+    <a href="#story">Story</a>
+    <a href="#blends">Blends</a>
+    <a href="#subscribe">Subscribe</a>
+    <a href="#visit">Visit</a>
+  </nav>
+
+  <button class="cart-nav-btn" id="cartBtn" aria-label="Open Cart">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+      <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/>
+    </svg>
+    <span class="cart-badge" id="cartBadge">0</span>
+  </button>
+
+  <a href="#blends" class="btn btn-sm" data-magnetic style="margin-left: 1rem;"><span>Shop</span><span>↗</span></a>
+  
+  <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <nav>
+    <a href="#live">Live</a>
+    <a href="#story">Story</a>
+    <a href="#blends">Blends</a>
+    <a href="#subscribe">Subscribe</a>
+    <a href="#visit">Visit</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <div class="mm-foot">
+    <a href="mailto:hello@emberandoak.coffee">hello@emberandoak.coffee</a>
+    <a href="#">Instagram</a>
+    <a href="#">Bandra · Mumbai</a>
+  </div>
+</div>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="orb orb-1" data-parallax="0.03"></div>
+      <div class="orb orb-2" data-parallax="-0.02"></div>
+      <div class="grid-lines"></div>
+    </div>
+
+    <div class="container hero-inner">
+      <div class="hero-live">
+        <span class="blink"></span>
+        <span>Roasting now</span>
+        <span class="sep">·</span>
+        <span>Ethiopia Guji &nbsp;<strong id="heroTemp">198.4°C</strong></span>
+        <span class="sep">·</span>
+        <span><strong id="heroVisitors">47</strong> people browsing</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line">
+          <span class="word" style="--i:1">Coffee</span>
+          <span class="word" style="--i:2">that</span>
+          <span class="word" style="--i:3">tastes</span>
+        </span>
+        <span class="line">
+          <span class="word" style="--i:4">like</span>
+          <span class="word serif" style="--i:5">someone</span>
+        </span>
+        <span class="line">
+          <span class="word" style="--i:6">cared.</span>
+        </span>
+      </h1>
+
+      <p class="hero-sub reveal" style="--d:700">
+        Ember &amp; Oak is a small-batch specialty coffee roastery in Bandra West, Mumbai.
+        We source single-origin beans, roast them every Tuesday, and ship across India
+        within 48 hours of roast.
+      </p>
+
+      <div class="hero-actions reveal" style="--d:850">
+        <a href="#blends" class="btn" data-magnetic><span>Shop the roast</span><span>↗</span></a>
+        <a href="#subscribe" class="btn btn-ghost" data-magnetic><span>Subscribe &amp; save 15%</span></a>
+      </div>
+
+      <div class="hero-stats reveal" style="--d:1000">
+        <div class="hero-stat">
+          <div class="num"><span class="counter" data-target="12400" data-suffix="+">0</span></div>
+          <div class="lbl">Bags shipped</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num"><span class="counter" data-target="8">0</span></div>
+          <div class="lbl">Partner cafés</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">4.9<i>★</i></div>
+          <div class="lbl">2,400 reviews</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <span class="track"></span>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-group">
+        <span>Bombay Canteen</span><i>✦</i>
+        <span>Kala Ghoda Café</span><i>✦</i>
+        <span>Subko</span><i>✦</i>
+        <span>Blue Tokai</span><i>✦</i>
+        <span>Verus</span><i>✦</i>
+        <span>Prithvi Café</span><i>✦</i>
+        <span>The Table</span><i>✦</i>
+        <span>Qualia</span><i>✦</i>
+      </div>
+      <div class="marquee-group">
+        <span>Bombay Canteen</span><i>✦</i>
+        <span>Kala Ghoda Café</span><i>✦</i>
+        <span>Subko</span><i>✦</i>
+        <span>Blue Tokai</span><i>✦</i>
+        <span>Verus</span><i>✦</i>
+        <span>Prithvi Café</span><i>✦</i>
+        <span>The Table</span><i>✦</i>
+        <span>Qualia</span><i>✦</i>
+      </div>
+    </div>
+  </div>
+
+  <section class="section live-section" id="live">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow reveal">01 — From the Roastery</p>
+          <h2 class="h2 reveal" style="--d:80">The roastery, <em>live</em>.</h2>
+        </div>
+        <p class="lead reveal" style="--d:160">
+          Every order, every batch, every cup — updated in real time from our
+          Bandra roastery. Nothing hidden, nothing staged.
+        </p>
+      </div>
+
+      <div class="live-shell reveal-scale">
+        <div class="live-topbar">
+          <span class="live-status"><span class="blink"></span> LIVE</span>
+          <span class="location">Ember &amp; Oak · <strong>Bandra West, Mumbai</strong> · 24°C, clear</span>
+          <span class="live-clock" id="liveClock">--:--:--</span>
+        </div>
+
+        <div class="live-kpis">
+          <div class="live-kpi">
+            <div class="live-kpi-label"><span class="pulse-dot"></span> Orders today</div>
+            <div class="live-kpi-value" id="kpiOrders">187</div>
+            <div class="live-kpi-delta up">▲ 23 vs yesterday</div>
+          </div>
+          <div class="live-kpi">
+            <div class="live-kpi-label"><span class="pulse-dot"></span> Revenue today</div>
+            <div class="live-kpi-value" id="kpiRevenue">₹84,270</div>
+            <div class="live-kpi-delta up">▲ 18.2%</div>
+          </div>
+          <div class="live-kpi">
+            <div class="live-kpi-label"><span class="pulse-dot"></span> Active subscriptions</div>
+            <div class="live-kpi-value" id="kpiSubs">1,428</div>
+            <div class="live-kpi-delta up">▲ 12 new this week</div>
+          </div>
+          <div class="live-kpi">
+            <div class="live-kpi-label"><span class="pulse-dot"></span> Cups brewed today</div>
+            <div class="live-kpi-value" id="kpiCups">3,204</div>
+            <div class="live-kpi-delta up">▲ 8.6%</div>
+          </div>
+        </div>
+
+        <div class="live-grid">
+          <div class="live-card span2">
+            <div class="live-card-head">
+              <div>
+                <div class="live-card-title">
+                  <span class="ico"></span>
+                  Roast in progress — Ethiopia Guji
+                </div>
+                <div class="live-card-sub">
+                  Batch #R-2847 · 12kg charge · <span id="roastElapsed">12:42</span> elapsed
+                </div>
+              </div>
+              <div class="live-temp" id="liveTemp">198.4°C</div>
+            </div>
+
+            <div class="roast-wrap">
+              <svg class="roast-chart" id="roastChart" viewBox="0 0 600 200" preserveAspectRatio="none" aria-label="Live roast temperature curve">
+                <defs>
+                  <linearGradient id="roastGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#FF8A4C" stop-opacity=".38"/>
+                    <stop offset="100%" stop-color="#FF8A4C" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <line class="gridline" x1="24" y1="24" x2="576" y2="24"/>
+                <line class="gridline" x1="24" y1="72" x2="576" y2="72"/>
+                <line class="gridline" x1="24" y1="120" x2="576" y2="120"/>
+                <line class="gridline" x1="24" y1="168" x2="576" y2="168"/>
+                <text class="axis-label" x="4" y="28">220°</text>
+                <text class="axis-label" x="4" y="76">180°</text>
+                <text class="axis-label" x="4" y="124">140°</text>
+                <text class="axis-label" x="4" y="172">100°</text>
+
+                <path id="roastArea" fill="url(#roastGrad)"/>
+                <path id="roastPath"/>
+                <line id="roastMarker" x1="576" y1="24" x2="576" y2="176"/>
+                <circle id="roastDot" r="5"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="live-card">
+            <div class="live-card-head">
+              <div>
+                <div class="live-card-title">Live orders</div>
+                <div class="live-card-sub">Across all channels</div>
+              </div>
+              <span class="live-pill green">
+                <span class="blink"></span>
+                <span id="feedCount">4</span> in last 60s
+              </span>
+            </div>
+            <div class="live-feed" id="liveFeed"></div>
+          </div>
+
+          <div class="live-card">
+            <div class="live-card-head">
+              <div>
+                <div class="live-card-title">Sales by city</div>
+                <div class="live-card-sub">Last 7 days</div>
+              </div>
+            </div>
+            <div class="city-sales" id="citySales">
+              <div class="city-row">
+                <span class="city-name">Mumbai</span>
+                <div class="city-bar-wrap"><div class="city-bar" style="--w:94%;--i:0"></div></div>
+                <span class="city-amt">₹48.2k</span>
+              </div>
+              <div class="city-row">
+                <span class="city-name">Bengaluru</span>
+                <div class="city-bar-wrap"><div class="city-bar" style="--w:58%;--i:1"></div></div>
+                <span class="city-amt">₹18.4k</span>
+              </div>
+              <div class="city-row">
+                <span class="city-name">Delhi</span>
+                <div class="city-bar-wrap"><div class="city-bar" style="--w:42%;--i:2"></div></div>
+                <span class="city-amt">₹12.6k</span>
+              </div>
+              <div class="city-row">
+                <span class="city-name">Pune</span>
+                <div class="city-bar-wrap"><div class="city-bar" style="--w:28%;--i:3"></div></div>
+                <span class="city-amt">₹8.9k</span>
+              </div>
+              <div class="city-row">
+                <span class="city-name">Other</span>
+                <div class="city-bar-wrap"><div class="city-bar" style="--w:14%;--i:4"></div></div>
+                <span class="city-amt">₹4.1k</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="live-card">
+            <div class="live-card-head">
+              <div>
+                <div class="live-card-title">Peak order hours</div>
+                <div class="live-card-sub">Coffee runs on a schedule</div>
+              </div>
+            </div>
+            <div class="peak-bars" id="peakBars">
+              <div class="peak-col"><div class="peak-fill" style="--h:22%;--i:0"></div><small>6a</small></div>
+              <div class="peak-col"><div class="peak-fill" style="--h:48%;--i:1"></div><small>7a</small></div>
+              <div class="peak-col"><div class="peak-fill" style="--h:72%;--i:2"></div><small>8a</small></div>
+              <div class="peak-col now"><div class="peak-fill" style="--h:88%;--i:3"></div><small>9a</small></div>
+              <div class="peak-col"><div class="peak-fill" style="--h:62%;--i:4"></div><small>10a</small></div>
+              <div class="peak-col"><div class="peak-fill" style="--h:44%;--i:5"></div><small>11a</small></div>
+              <div class="peak-col"><div class="peak-fill" style="--h:36%;--i:6"></div><small>12p</small></div>
+            </div>
+          </div>
+
+          <div class="live-card">
+            <div class="live-card-head">
+              <div>
+                <div class="live-card-title">Green bean stock</div>
+                <div class="live-card-sub">Current inventory</div>
+              </div>
+            </div>
+            <div class="bean-list" id="beanList">
+              <div class="bean-row">
+                <span class="bean-name">Ethiopia Guji</span>
+                <span class="bean-amt">24 kg</span>
+                <div class="bean-bar-wrap"><div class="bean-bar" style="--w:60%;--i:0;background:linear-gradient(90deg,var(--warm),rgba(255,138,76,.5))"></div></div>
+              </div>
+              <div class="bean-row">
+                <span class="bean-name">Colombia Huila</span>
+                <span class="bean-amt">18 kg</span>
+                <div class="bean-bar-wrap"><div class="bean-bar" style="--w:45%;--i:1;background:linear-gradient(90deg,var(--violet),rgba(123,107,255,.5))"></div></div>
+              </div>
+              <div class="bean-row">
+                <span class="bean-name">India Monsooned Malabar</span>
+                <span class="bean-amt">42 kg</span>
+                <div class="bean-bar-wrap"><div class="bean-bar" style="--w:88%;--i:2;background:linear-gradient(90deg,var(--accent),rgba(203,255,77,.5))"></div></div>
+              </div>
+              <div class="bean-row low">
+                <span class="bean-name">Brazil Cerrado</span>
+                <span class="bean-amt">8 kg</span>
+                <div class="bean-bar-wrap"><div class="bean-bar" style="--w:18%;--i:3;background:linear-gradient(90deg,var(--red),rgba(255,92,92,.5))"></div></div>
+              </div>
+              <div class="bean-row">
+                <span class="bean-name">Kenya AA</span>
+                <span class="bean-amt">31 kg</span>
+                <div class="bean-bar-wrap"><div class="bean-bar" style="--w:72%;--i:4;background:linear-gradient(90deg,var(--cyan),rgba(41,211,196,.5))"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="live-strip">
+          <div class="chunk">
+            <span class="visitor-dots"><span></span><span></span><span></span><span></span><span></span></span>
+            <span><strong id="stripVisitors">47</strong> people browsing right now</span>
+          </div>
+          <div class="chunk">
+            <span>Average order <strong>₹1,180</strong></span>
+          </div>
+          <div class="chunk">
+            <span>Last order <strong id="lastOrderTime">2 sec ago</strong></span>
+          </div>
+          <div class="chunk" style="margin-left:auto">
+            <span>Next roast drop <strong>Tuesday, 6am</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="story">
+    <div class="container">
+      <div class="story-grid">
+        <div>
+          <p class="eyebrow reveal">02 — The Roastery</p>
+          <h2 class="h2 reveal" style="--d:80">
+            Small batch. <em>Big obsession.</em>
+          </h2>
+        </div>
+
+        <div class="story-copy">
+          <p class="reveal" style="--d:120">
+            We started Ember &amp; Oak in 2019 out of a one-room flat in Bandra,
+            with a secondhand 3kg roaster and a stubborn belief that
+            <strong>Mumbai deserved better coffee</strong> — not the kind that
+            hides behind foam, but the kind that tastes like the farm it came from.
+          </p>
+          <p class="reveal" style="--d:200">
+            Five years and fourteen thousand bags later, we still roast every
+            Tuesday, still cup every batch, and still ship to your door within
+            48 hours of roast. Some things shouldn't scale.
+          </p>
+
+          <div class="counter-grid reveal" style="--d:280">
+            <div class="counter-cell">
+              <div class="value"><span class="counter" data-target="6">0</span><i>yrs</i></div>
+              <div class="label">Since 2019</div>
+            </div>
+            <div class="counter-cell">
+              <div class="value"><span class="counter" data-target="8">0</span></div>
+              <div class="label">Origin farms</div>
+            </div>
+            <div class="counter-cell">
+              <div class="value"><span class="counter" data-target="12400" data-suffix="+">0</span></div>
+              <div class="label">Bags shipped</div>
+            </div>
+            <div class="counter-cell">
+              <div class="value">4.9<i>★</i></div>
+              <div class="label">2,400 reviews</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow reveal">03 — Bean to Cup</p>
+          <h2 class="h2 reveal" style="--d:80">How we <em>do it</em>.</h2>
+        </div>
+        <p class="lead reveal" style="--d:160">
+          Four steps, zero shortcuts. Every bag is traceable to the farm and
+          the roast date.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-step reveal" style="--d:60">
+          <span class="step-num">01</span>
+          <h3>Source</h3>
+          <p>We buy directly from eight farms across Ethiopia, Colombia, India, Brazil and Kenya — paying above fair-trade floor every time.</p>
+        </div>
+        <div class="process-step reveal" style="--d:140">
+          <span class="step-num">02</span>
+          <h3>Roast</h3>
+          <p>12kg batches, roasted every Tuesday morning. Each batch is logged with a full temperature curve — just like the one you see above.</p>
+        </div>
+        <div class="process-step reveal" style="--d:220">
+          <span class="step-num">03</span>
+          <h3>Cup</h3>
+          <p>Every roast is cupped by our Q-grader within 24 hours. If it doesn't score 84+, it doesn't ship. Simple.</p>
+        </div>
+        <div class="process-step reveal" style="--d:300">
+          <span class="step-num">04</span>
+          <h3>Ship</h3>
+          <p>Bags are sealed within 48 hours of roast and dispatched across India. Same-day delivery in Mumbai, 2–3 days everywhere else.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="blends">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow reveal">04 — The Roast</p>
+          <h2 class="h2 reveal" style="--d:80">This month's <em>blends</em>.</h2>
+        </div>
+        <p class="lead reveal" style="--d:160">
+          Fresh from the Tuesday roast. Every bag carries its own roast date
+          and full tasting notes.
+        </p>
+      </div>
+
+      <div class="blends-grid">
+        <article class="blend-card reveal" style="--d:60">
+          <div class="blend-art blend-1"><span class="blend-art-title">Guji</span></div>
+          <div class="blend-info">
+            <div class="blend-name">Ethiopia Guji</div>
+            <div class="blend-notes">Peach · Jasmine · Honey finish. Washed, 1900m.</div>
+            <div class="blend-foot">
+              <div class="blend-price">₹780<small> / 250g</small></div>
+              <button class="blend-add" 
+                data-name="Ethiopia Guji" 
+                data-price="780" 
+                data-img="blend-1"
+                aria-label="Add Ethiopia Guji to cart">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="blend-card reveal" style="--d:120">
+          <div class="blend-art blend-2"><span class="blend-art-title">Malabar</span></div>
+          <div class="blend-info">
+            <div class="blend-name">Monsooned Malabar</div>
+            <div class="blend-notes">Dark chocolate · Clove · Earthy. Monsooned AA.</div>
+            <div class="blend-foot">
+              <div class="blend-price">₹620<small> / 250g</small></div>
+              <button class="blend-add" 
+                data-name="Monsooned Malabar" 
+                data-price="620" 
+                data-img="blend-2"
+                aria-label="Add Monsooned Malabar to cart">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="blend-card reveal" style="--d:180">
+          <div class="blend-art blend-3"><span class="blend-art-title">Huila</span></div>
+          <div class="blend-info">
+            <div class="blend-name">Colombia Huila</div>
+            <div class="blend-notes">Red apple · Caramel · Cocoa nib. Washed, 1750m.</div>
+            <div class="blend-foot">
+              <div class="blend-price">₹720<small> / 250g</small></div>
+              <button class="blend-add" 
+                data-name="Colombia Huila" 
+                data-price="720" 
+                data-img="blend-3"
+                aria-label="Add Colombia Huila to cart">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="blend-card reveal" style="--d:240">
+          <div class="blend-art blend-4"><span class="blend-art-title">Kenya</span></div>
+          <div class="blend-info">
+            <div class="blend-name">Kenya AA Nyeri</div>
+            <div class="blend-notes">Blackcurrant · Grapefruit · Brown sugar. Washed.</div>
+            <div class="blend-foot">
+              <div class="blend-price">₹890<small> / 250g</small></div>
+              <button class="blend-add" 
+                data-name="Kenya AA Nyeri" 
+                data-price="890" 
+                data-img="blend-4"
+                aria-label="Add Kenya AA Nyeri to cart">+</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="subscribe">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow reveal">05 — Subscribe</p>
+          <h2 class="h2 reveal" style="--d:80">Fresh coffee, <em>on repeat</em>.</h2>
+        </div>
+        <p class="lead reveal" style="--d:160">
+          Skip the decision fatigue. We pick a rotating single-origin each month,
+          roast it Tuesday, ship it Friday. Pause or cancel anytime.
+        </p>
+      </div>
+
+      <div class="sub-grid">
+        <div class="sub-card reveal" style="--d:60">
+          <h3>Taster</h3>
+          <p class="desc">One 250g bag a month. Perfect for solo drinkers and the coffee-curious.</p>
+          <div class="sub-price">
+            <span class="amount">₹680</span>
+            <span class="unit">/ month</span>
+          </div>
+          <ul class="sub-features">
+            <li>One 250g bag, rotating single-origin</li>
+            <li>Free shipping across India</li>
+            <li>Brew notes card included</li>
+            <li class="dim">Second bag option</li>
+            <li class="dim">Priority roast date</li>
+          </ul>
+          <a href="#visit" class="btn btn-ghost"><span>Start tasting</span></a>
+        </div>
+
+        <div class="sub-card featured reveal" style="--d:140">
+          <h3>Daily Grind</h3>
+          <p class="desc">Two 250g bags a month — one blend for milk, one single-origin for filter. Our most popular plan.</p>
+          <div class="sub-price">
+            <span class="amount">₹1,180</span>
+            <span class="unit">/ month</span>
+          </div>
+          <ul class="sub-features">
+            <li>Two 250g bags, curated monthly</li>
+            <li>Free priority shipping</li>
+            <li>Free brew method consultation</li>
+            <li>10% off all one-off bags</li>
+            <li>Early access to new roasts</li>
+          </ul>
+          <a href="#visit" class="btn"><span>Start daily</span><span>↗</span></a>
+        </div>
+
+        <div class="sub-card reveal" style="--d:220">
+          <h3>Roaster's Table</h3>
+          <p class="desc">A 1kg bag + exclusive micro-lot every month. For the serious home barista.</p>
+          <div class="sub-price">
+            <span class="amount">₹2,180</span>
+            <span class="unit">/ month</span>
+          </div>
+          <ul class="sub-features">
+            <li>1kg bag + exclusive micro-lot</li>
+            <li>Free express shipping</li>
+            <li>Cupping notes from our Q-grader</li>
+            <li>Invites to private cupping sessions</li>
+            <li>Direct line to our roaster</li>
+          </ul>
+          <a href="#visit" class="btn btn-ghost"><span>Join the table</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="voices">
+    <div class="container">
+      <p class="eyebrow reveal">06 — Voices</p>
+
+      <div class="quotes-wrap reveal-scale">
+        <div class="quotes" id="quotes">
+          <div class="quote active">
+            <blockquote>
+              I've been buying from Ember &amp; Oak every month for two years now.
+              It's the only coffee I've found in Mumbai that tastes like it was
+              roasted <em>yesterday</em> — because it was.
+            </blockquote>
+            <div class="quote-author">
+              <div class="avatar">AK</div>
+              <div>
+                <div class="who">Aarav Khanna</div>
+                <div class="role">Home barista · Bandra</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="quote">
+            <blockquote>
+              We serve Ember &amp; Oak at our café because their roast dates are
+              honest and their cupping standards are genuinely high. Our regulars
+              noticed the difference in week one.
+            </blockquote>
+            <div class="quote-author">
+              <div class="avatar">SP</div>
+              <div>
+                <div class="who">Sanya Patel</div>
+                <div class="role">Founder, Kala Ghoda Café</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="quote">
+            <blockquote>
+              The Daily Grind subscription is the best ₹1,180 I spend each month.
+              It shows up, it's fresh, and it's always <em>interesting</em>.
+            </blockquote>
+            <div class="quote-author">
+              <div class="avatar">RN</div>
+              <div>
+                <div class="who">Rahul Nair</div>
+                <div class="role">Subscriber · Powai</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote-dots" id="quoteDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="visit">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow reveal">07 — Visit</p>
+          <h2 class="h2 reveal" style="--d:80">Come by the <em>roastery</em>.</h2>
+        </div>
+      </div>
+
+      <div class="visit-grid">
+        <div class="visit-map reveal-scale">
+          <div class="visit-pin">
+            <div class="dot"></div>
+            <div class="label">Ember &amp; Oak · Bandra West</div>
+          </div>
+        </div>
+
+        <div class="visit-info">
+          <h3>Bandra West <em>roastery</em></h3>
+
+          <div class="visit-block reveal" style="--d:100">
+            <h4>Address</h4>
+            <p>
+              14 Chapel Road,<br>
+              Bandra West, Mumbai 400050
+            </p>
+          </div>
+
+          <div class="visit-block reveal" style="--d:180">
+            <h4>Contact</h4>
+            <p>
+              <a href="mailto:hello@emberandoak.coffee">hello@emberandoak.coffee</a><br>
+              <a href="tel:+912200000000">+91 22 0000 0000</a>
+            </p>
+          </div>
+
+          <div class="visit-block reveal" style="--d:260">
+            <h4>Hours</h4>
+            <div class="visit-hours">
+              <div><span>Mon — Fri</span><span>7:00 am — 8:00 pm</span></div>
+              <div><span>Saturday</span><span>8:00 am — 9:00 pm</span></div>
+              <div><span>Sunday</span><span>8:00 am — 6:00 pm</span></div>
+              <div><span>Roast day</span><span>Tuesday · 6:00 am</span></div>
+            </div>
+          </div>
+
+          <div class="visit-block reveal" style="--d:340">
+            <h4>Cuppings</h4>
+            <p>
+              Free public cupping every Saturday at 10am. Six beans, one Q-grader,
+              zero pressure. <a href="mailto:hello@emberandoak.coffee">Reserve a seat →</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow reveal">08 — FAQ</p>
+          <h2 class="h2 reveal" style="--d:80">Questions, <em>answered</em>.</h2>
+        </div>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item reveal" style="--d:40">
+          <button class="faq-q">How fresh is the coffee when it arrives?<span class="plus">+</span></button>
+          <div class="faq-a"><p>Every bag is roasted on Tuesday and dispatched within 48 hours. Inside Mumbai you'll usually have it in hand within 24 hours of roast; elsewhere in India, 2–3 days. Each bag carries its exact roast date.</p></div>
+        </div>
+        <div class="faq-item reveal" style="--d:100">
+          <button class="faq-q">Do you ship outside India?<span class="plus">+</span></button>
+          <div class="faq-a"><p>Not yet — but we're working on it. For now we ship to every pincode in India via our logistics partner. Shipping is free above ₹1,500; ₹99 flat below that.</p></div>
+        </div>
+        <div class="faq-item reveal" style="--d:160">
+          <button class="faq-q">What's the best way to brew your coffee?<span class="plus">+</span></button>
+          <div class="faq-a"><p>Every bag ships with a brew card recommending grind size, ratio and water temp for the specific origin. And if you email us, our roaster will personally recommend a method — filter, espresso, or moka pot.</p></div>
+        </div>
+        <div class="faq-item reveal" style="--d:220">
+          <button class="faq-q">Can I pause or cancel my subscription?<span class="plus">+</span></button>
+          <div class="faq-a"><p>Anytime, in one click. No emails, no retention calls, no guilt. Pause for a month, skip a roast, or cancel entirely — your call.</p></div>
+        </div>
+        <div class="faq-item reveal" style="--d:280">
+          <button class="faq-q">Do you supply cafés and restaurants?<span class="plus">+</span></button>
+          <div class="faq-a"><p>Yes — we currently supply eight cafés across Mumbai and Bengaluru, with wholesale pricing, roast-to-order scheduling and on-site barista training. Write to <a href="mailto:wholesale@emberandoak.coffee" style="color:var(--accent)">wholesale@emberandoak.coffee</a>.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta" id="contact">
+    <div class="container cta-inner">
+      <p class="eyebrow reveal" style="justify-content:center">09 — Say Hello</p>
+      <h2 class="h2 reveal" style="--d:80">
+        Your next cup is <em>one Tuesday away</em>.
+      </h2>
+
+      <div class="cta-actions reveal" style="--d:200">
+        <a href="#blends" class="btn" data-magnetic>
+          <span>Shop the roast</span><span>↗</span>
+        </a>
+        <a href="#subscribe" class="btn btn-ghost" data-magnetic><span>Subscribe &amp; save 15%</span></a>
+      </div>
+
+      <a href="mailto:hello@emberandoak.coffee" class="cta-mail reveal" style="--d:320">
+        hello@emberandoak.coffee
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="brand">
+          <span class="brand-mark"></span>
+          Ember &amp; Oak<sup>®</sup>
+        </a>
+        <p>
+          A small-batch specialty coffee roastery in Bandra West, Mumbai.
+          Single origins, honest roast dates, and a stubborn refusal to scale
+          for the sake of it.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="#blends">Blends</a>
+        <a href="#subscribe">Subscriptions</a>
+        <a href="#blends">Gift cards</a>
+        <a href="#blends">Wholesale</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Roastery</h4>
+        <a href="#story">Story</a>
+        <a href="#process">Process</a>
+        <a href="#live">Live dashboard</a>
+        <a href="#visit">Visit us</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:hello@emberandoak.coffee">hello@emberandoak.coffee</a>
+        <a href="tel:+912200000000">+91 22 0000 0000</a>
+        <a href="#">Bandra · Mumbai</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Ember &amp; Oak Coffee Roasters. All rights reserved.</span>
+      <div class="socials">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-wordmark" aria-hidden="true">EMBER</div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart">
+  <div class="cart-header">
+    <h3>Your Cart <span id="cartCountText" style="color:var(--muted);font-size:1rem;font-family:'Inter'">(0)</span></h3>
+    <button class="cart-close" id="cartClose" aria-label="Close cart">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  
+  <div class="cart-items" id="cartItemsContainer">
+  </div>
+
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-total-row">
+      <span>Subtotal</span>
+      <span id="cartTotal">₹0</span>
+    </div>
+    <button class="btn cart-checkout-btn" onclick="checkout()">
+      <span>Checkout</span><span>↗</span>
+    </button>
+  </div>
+</aside>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
